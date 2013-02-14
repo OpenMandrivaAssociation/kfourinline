@@ -1,0 +1,42 @@
+Name:		kfourinline
+Summary:	Place 4 pieces in a row
+Version:	4.10.0
+Release:	1
+Epoch:		1
+Group:		Graphical desktop/KDE
+License:	GPLv2 and LGPLv2 and GFDL
+URL:		http://games.kde.org/game.php?game=kfourinline
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	libkdegames-devel
+
+%description
+KFourInLine is a board game for two players based on the Connect-Four game.
+
+The players try to build up a row of four pieces using different strategies.
+
+%files
+%{_kde_bindir}/kfourinline
+%{_kde_bindir}/kfourinlineproc
+%{_kde_applicationsdir}/kfourinline.desktop
+%{_kde_appsdir}/kfourinline
+%{_kde_docdir}/*/*/kfourinline
+%{_kde_iconsdir}/hicolor/*/apps/kfourinline.png
+%{_kde_datadir}/config.kcfg/kwin4.kcfg
+
+#------------------------------------------------------------------------------
+
+%prep
+%setup -q
+
+%build
+%cmake_kde4
+%make
+
+%install
+%makeinstall_std -C build
+
+%changelog
+* Wed Feb 13 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
+- Split from kdegames4 package
+
+
