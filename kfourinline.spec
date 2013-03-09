@@ -1,6 +1,6 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	4.10.0
+Version:	4.10.1
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -36,6 +36,9 @@ The players try to build up a row of four pieces using different strategies.
 %makeinstall_std -C build
 
 %changelog
+* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
+- New version 4.10.1
+
 * Wed Feb 13 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
 - Split from kdegames4 package
 
