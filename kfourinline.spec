@@ -6,8 +6,10 @@ Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://games.kde.org/game.php?game=kfourinline
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	libkdegames-devel
+BuildRequires: 	cmake(KF5NotifyConfig)
+BuildRequires: 	cmake(ECM)
 
 %description
 KFourInLine is a board game for two players based on the Connect-Four game.
@@ -15,85 +17,23 @@ KFourInLine is a board game for two players based on the Connect-Four game.
 The players try to build up a row of four pieces using different strategies.
 
 %files
-%{_kde_bindir}/kfourinline
-%{_kde_bindir}/kfourinlineproc
-%{_kde_applicationsdir}/kfourinline.desktop
-%{_kde_appsdir}/kfourinline
-%{_kde_docdir}/*/*/kfourinline
-%{_kde_iconsdir}/hicolor/*/apps/kfourinline.png
-%{_kde_datadir}/config.kcfg/kwin4.kcfg
+%{_bindir}/kfourinline
+%{_bindir}/kfourinlineproc
+%{_datadir}/applications/org.kde.kfourinline.desktop
+%{_datadir}/kfourinline
+%doc %{_docdir}/*/*/kfourinline
+%{_iconsdir}/hicolor/*/apps/kfourinline.png
+%{_datadir}/config.kcfg/kwin4.kcfg
+%{_datadir}/kxmlgui5/kfourinline/kfourinlineui.rc
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
-- New version 4.14.1
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- New version 4.13.2
-
-* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
-- New version 4.12.4
-
-* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
-- New version 4.12.3
-
-* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
-- New version 4.12.2
-
-* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
-- New version 4.12.1
-
-* Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
-- New version 4.11.4
-
-* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
-- New version 4.11.3
-
-* Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
-- New version 4.11.2
-
-* Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.1-1
-- New version 4.11.1
-
-* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
-- New version 4.11.0
-
-* Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
-- New version 4.10.5
-
-* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
-- New version 4.10.4
-
-* Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
-- New version 4.10.3
-
-* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
-- New version 4.10.2
-
-* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
-- New version 4.10.1
-
-* Wed Feb 13 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
-- Split from kdegames4 package
-
-
+%ninja_install -C build
