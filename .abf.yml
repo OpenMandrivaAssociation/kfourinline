@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kfourinline-15.08.0.tar.xz: 7c21ecfb5d72a8c1617687e6ba5ea835282480d1
+sources:
+  kfourinline-15.08.1.tar.xz: edfcb93370b255ae3d7e9e37d3ee040717e291fc
