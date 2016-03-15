@@ -1,6 +1,6 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	15.12.2
+Version:	15.12.3
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
