@@ -1,12 +1,13 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	16.12.2
+Version:	17.03.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://games.kde.org/game.php?game=kfourinline
-Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KF5KDEGames)
 BuildRequires: 	cmake(ECM)
 
