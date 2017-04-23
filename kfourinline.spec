@@ -1,6 +1,6 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -39,12 +39,11 @@ KFourInLine is a board game for two players based on the Connect-Four game.
 
 The players try to build up a row of four pieces using different strategies.
 
-%files
+%files -f kfourinline.lang
 %{_bindir}/kfourinline
 %{_bindir}/kfourinlineproc
 %{_datadir}/applications/org.kde.kfourinline.desktop
 %{_datadir}/kfourinline
-%doc %{_docdir}/*/*/kfourinline
 %{_iconsdir}/hicolor/*/apps/kfourinline.png
 %{_datadir}/config.kcfg/kwin4.kcfg
 %{_datadir}/kxmlgui5/kfourinline/kfourinlineui.rc
@@ -60,3 +59,4 @@ The players try to build up a row of four pieces using different strategies.
 
 %install
 %ninja_install -C build
+%find_lang kfourinline --with-html
