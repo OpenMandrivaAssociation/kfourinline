@@ -1,6 +1,6 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	17.08.3
+Version:	17.11.90
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -46,7 +46,6 @@ The players try to build up a row of four pieces using different strategies.
 %{_datadir}/kfourinline
 %{_iconsdir}/hicolor/*/apps/kfourinline.png
 %{_datadir}/config.kcfg/kwin4.kcfg
-%{_datadir}/kxmlgui5/kfourinline/kfourinlineui.rc
 
 #------------------------------------------------------------------------------
 
