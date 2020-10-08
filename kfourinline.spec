@@ -1,7 +1,7 @@
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	20.08.1
-Release:	2
+Version:	20.08.2
+Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
