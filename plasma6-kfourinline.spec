@@ -1,7 +1,7 @@
 Name:		plasma6-kfourinline
 Summary:	Place 4 pieces in a row
 Version:	24.01.90
-Release:	2
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		http://games.kde.org/game.php?game=kfourinline
@@ -12,11 +12,13 @@ BuildRequires: 	cmake(ECM)
 
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6QuickWidgets)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Test)
-
+BuildRequires: 	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6ItemModels)
@@ -31,6 +33,7 @@ BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6DNSSD)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6NotifyConfig)
+BuildRequires:  qt6-qtbase-theme-gtk3
 
 %description
 KFourInLine is a board game for two players based on the Connect-Four game.
