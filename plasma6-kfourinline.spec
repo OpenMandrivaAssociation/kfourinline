@@ -1,6 +1,6 @@
 Name:		plasma6-kfourinline
 Summary:	Place 4 pieces in a row
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
