@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-kfourinline
 Summary:	Place 4 pieces in a row
-Version:	24.05.2
+Version:	24.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -49,6 +49,7 @@ The players try to build up a row of four pieces using different strategies.
 
 %files -f kfourinline.lang
 %{_datadir}/qlogging-categories6/kfourinline.categories
+%{_datadir}/qlogging-categories6/kfourinline.renamecategories
 %{_datadir}/metainfo/org.kde.kfourinline.appdata.xml
 %{_bindir}/kfourinline
 %{_bindir}/kfourinlineproc
