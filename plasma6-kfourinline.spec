@@ -7,7 +7,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-URL:		http://games.kde.org/game.php?game=kfourinline
+URL:		https://games.kde.org/game.php?game=kfourinline
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/kfourinline/-/archive/%{gitbranch}/kfourinline-%{gitbranchd}.tar.bz2#/kfourinline-%{git}.tar.bz2
