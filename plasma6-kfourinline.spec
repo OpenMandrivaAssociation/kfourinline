@@ -4,7 +4,7 @@
 Name:		plasma6-kfourinline
 Summary:	Place 4 pieces in a row
 Version:	24.12.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 URL:		https://games.kde.org/game.php?game=kfourinline
