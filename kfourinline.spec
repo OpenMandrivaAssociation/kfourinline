@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		kfourinline
 Summary:	Place 4 pieces in a row
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
@@ -42,12 +42,17 @@ BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6NotifyConfig)
 BuildRequires:  qt6-qtbase-theme-gtk3
 
+%rename plasma6-kfourinline
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KFourInLine is a board game for two players based on the Connect-Four game.
 
 The players try to build up a row of four pieces using different strategies.
 
-%files -f kfourinline.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kfourinline.categories
 %{_datadir}/qlogging-categories6/kfourinline.renamecategories
 %{_datadir}/metainfo/org.kde.kfourinline.appdata.xml
@@ -57,18 +62,3 @@ The players try to build up a row of four pieces using different strategies.
 %{_datadir}/kfourinline
 %{_iconsdir}/hicolor/*/apps/kfourinline.png
 %{_datadir}/config.kcfg/kwin4.kcfg
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kfourinline-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kfourinline --with-html
